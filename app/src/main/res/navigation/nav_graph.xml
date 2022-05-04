@@ -6,12 +6,12 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.easytresh.client_screens.MainFragment"
+        android:name="com.example.easytresh.presentation.client_screens.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main"/>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.easytresh.client_screens.LoginFragment"
+        android:name="com.example.easytresh.presentation.client_screens.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action

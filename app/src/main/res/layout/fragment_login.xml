@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".client_screens.LoginFragment" >
+    tools:context=".presentation.client_screens.LoginFragment" >
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"

@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
 }
 
 android {
@@ -33,10 +35,38 @@ android {
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    def nav_version = "2.4.2"
 
+    //Navi
+    def nav_version = "2.4.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Room
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    //RX
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+
+    //ViewModel LifeData
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'android.arch.lifecycle:common-java8:1.1.1'
+
+    //Dagger 2
+    implementation 'com.google.dagger:dagger:2.41'
+    kapt 'com.google.dagger:dagger-compiler:2.41'
+
+    //OkHTTP Logging
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.7'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

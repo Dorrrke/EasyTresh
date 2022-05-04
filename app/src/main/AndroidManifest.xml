@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyTresh">
         <activity
-            android:name=".ClientActivity"
+            android:name=".presentation.ClientActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
