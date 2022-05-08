@@ -14,10 +14,8 @@ class HistoryFragment() : Fragment(R.layout.fragment_history) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        (context as MainApp).appComponent.inject(this)
         (activity?.application as MainApp).appComponent.inject(this)
-        var tt = viewModel.hello()
-        print(tt)
+
 
     }
 }

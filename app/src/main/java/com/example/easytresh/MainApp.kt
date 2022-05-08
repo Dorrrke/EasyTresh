@@ -20,13 +20,13 @@ class MainApp : Application(){
         intiDagger()
     }
 
-    fun initRoom() {
-        database = Room.databaseBuilder(this, AppDatabase::class.java, "database")
+    private fun initRoom() {
+        database = Room.databaseBuilder(this, AppDatabase::class.java, "treshDB")
             .allowMainThreadQueries()
             .build()
     }
 
-    fun intiDagger() {
+    private fun intiDagger() {
         appComponent = DaggerAppComponent.builder()
             .databaseModule(DatabaseModule(this!!.database!!))
             .viewModelModule(ViewModelModule(this))
@@ -34,8 +34,3 @@ class MainApp : Application(){
             .build()
     }
 }
-//val Context.appComponent: AppComponent
-//    get() = when (this) {
-//        is MainApp -> appComponent
-//        else -> this.applicationContext.appComponent
-//    }

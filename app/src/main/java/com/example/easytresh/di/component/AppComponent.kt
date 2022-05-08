@@ -13,6 +13,7 @@ interface AppComponent {
     fun inject (fragment: MainFragment)
     fun inject (fragment: HistoryFragment)
     fun inject (fragment: LoginFragment)
+    fun inject (fragment: RegisterFragment)
     fun inject (fragment: OrderFragment)
     fun inject (fragment: ProfileFragment)
 }
