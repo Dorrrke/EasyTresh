@@ -1,10 +1,19 @@
 package com.example.easytresh.domain
 
 import android.app.Application
+import com.example.easytresh.MainApp
 import com.example.easytresh.repository.AppRepository
 import com.example.easytresh.repository.database.entity.Users
+import javax.inject.Inject
 
-class RegisterViewModel(application: Application, private val repository: AppRepository): BaseViewModel(application) {
+class RegisterViewModel(application: Application): BaseViewModel(application) {
+
+    @Inject
+    lateinit var repository: AppRepository
+
+    init {
+        (application as MainApp).appComponent.inject(this)
+    }
 
 
     fun correctValue(fullName: String, phone: String, pass: String, repeatPass: String) : Boolean{

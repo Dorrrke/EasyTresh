@@ -6,7 +6,7 @@ import com.example.easytresh.di.component.AppComponent
 import com.example.easytresh.di.component.DaggerAppComponent
 import com.example.easytresh.di.module.DatabaseModule
 import com.example.easytresh.di.module.RepositoryModule
-import com.example.easytresh.di.module.ViewModelModule
+
 import com.example.easytresh.repository.database.AppDatabase
 
 class MainApp : Application(){
@@ -29,7 +29,6 @@ class MainApp : Application(){
     private fun intiDagger() {
         appComponent = DaggerAppComponent.builder()
             .databaseModule(DatabaseModule(this!!.database!!))
-            .viewModelModule(ViewModelModule(this))
             .repositoryModule(RepositoryModule())
             .build()
     }

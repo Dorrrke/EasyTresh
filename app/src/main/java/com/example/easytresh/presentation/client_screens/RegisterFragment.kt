@@ -9,22 +9,27 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.easytresh.MainApp
 import com.example.easytresh.R
+import com.example.easytresh.domain.LoginViewModel
 import com.example.easytresh.domain.RegisterViewModel
+import com.example.easytresh.domain.ViewModelFactories.LoginViewModelFactory
+import com.example.easytresh.domain.ViewModelFactories.RegisterViewModelFactory
 import javax.inject.Inject
 
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
-    @Inject
+
     lateinit var viewModel: RegisterViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity?.application as MainApp).appComponent.inject(this)
+        viewModel = ViewModelProvider(this, RegisterViewModelFactory(activity?.application as MainApp)).get(
+            RegisterViewModel::class.java)
     }
 
 
