@@ -16,6 +16,10 @@ class AppRepository (private val database: AppDatabase){
         return database.UsersDao().getUserByPhone(phone)
     }
 
+    fun getUserById(id: Int): Users{
+        return database.UsersDao().getUserById(id)
+    }
+
     fun getAll(): List<Users> {
         return database.UsersDao().getAllUsers()
     }

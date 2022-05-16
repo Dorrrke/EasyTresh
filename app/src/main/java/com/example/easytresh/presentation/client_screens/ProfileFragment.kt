@@ -23,18 +23,19 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this, ProfileViewModelFactory(activity?.application as MainApp)).get(
-            ProfileViewModel::class.java)
+        viewModel =
+            ViewModelProvider(this, ProfileViewModelFactory(activity?.application as MainApp)).get(
+                ProfileViewModel::class.java
+            )
 //        generalViewModel = ViewModelProvider(this, AllFragmentsViewModelFactory(activity?.application as MainApp)).get(
 //            AllFragmentsViewModel::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var id = MainFragment.userId
-        var text = view?.findViewById<TextView>(R.id.editTextTextPersonName)
-        if (text != null) {
-            text.text = id.toString()
-        }
+        var client = viewModel.getClient(MainFragment.userId)
+        view.findViewById<TextView>(R.id.nameView).text = client.userName
+        view.findViewById<TextView>(R.id.phoneView).text = client.userPhone
+        view.findViewById<TextView>(R.id.dateView).text = client.registrationDate
     }
 }
