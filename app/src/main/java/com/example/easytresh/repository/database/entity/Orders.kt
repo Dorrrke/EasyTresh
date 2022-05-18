@@ -23,6 +23,8 @@ import androidx.room.PrimaryKey
 data class Orders(
     @PrimaryKey(autoGenerate = true) val OrderId: Int,
     @ColumnInfo(name = "Date") val date: String,
+    @ColumnInfo(name = "TrashType") val type: String,
+    @ColumnInfo(name = "Size") val size: String,
     @ColumnInfo(name = "AddressId") val addressId: Int,
     @ColumnInfo(name = "ClientId") val clientId: Int
 )

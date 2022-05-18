@@ -21,7 +21,7 @@ class MainApp : Application(){
     }
 
     private fun initRoom() {
-        database = Room.databaseBuilder(this, AppDatabase::class.java, "newDB")
+        database = Room.databaseBuilder(this, AppDatabase::class.java, "EasyTrashLocalDB")
             .allowMainThreadQueries()
             .build()
     }
