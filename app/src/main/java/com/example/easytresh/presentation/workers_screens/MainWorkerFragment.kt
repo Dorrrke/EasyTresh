@@ -1,4 +1,4 @@
-package com.example.easytresh.presentation.client_screens
+package com.example.easytresh.presentation.workers_screens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,14 +9,12 @@ import com.example.easytresh.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.properties.Delegates
 
-class MainFragment : Fragment(R.layout.fragment_main) {
+class MainWorkerFragment : Fragment(R.layout.fragment_workers_main) {
 
     companion object {
         const val userIdKey = "USER_ID"
         var userId by Delegates.notNull<Int>()
     }
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,5 +27,4 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         val navController = (childFragmentManager.findFragmentById(R.id.mainWorkersContainerView) as NavHostFragment).navController
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
     }
-
 }

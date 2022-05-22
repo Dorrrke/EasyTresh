@@ -3,15 +3,11 @@ package com.example.easytresh.presentation.client_screens
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.easytresh.MainApp
 import com.example.easytresh.R
-import com.example.easytresh.domain.AllFragmentsViewModel
-import com.example.easytresh.domain.ProfileViewModel
-import com.example.easytresh.domain.ViewModelFactories.AllFragmentsViewModelFactory
+import com.example.easytresh.domain.clientViewModels.ProfileViewModel
 import com.example.easytresh.domain.ViewModelFactories.ProfileViewModelFactory
 
 

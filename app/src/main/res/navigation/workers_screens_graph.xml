@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/workers_screens_graph"
+    app:startDestination="@id/workerProfileFragment">
+
+    <fragment
+        android:id="@+id/workerProfileFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.WorkerProfileFragment"
+        android:label="fragment_worker_profile"
+        tools:layout="@layout/fragment_worker_profile" />
+    <fragment
+        android:id="@+id/ordersListFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.OrdersListFragment"
+        android:label="fragment_orders_list"
+        tools:layout="@layout/fragment_orders_list" />
+    <fragment
+        android:id="@+id/workHistoryFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.WorkHistoryFragment"
+        android:label="fragment_work_history"
+        tools:layout="@layout/fragment_work_history" />
+</navigation>

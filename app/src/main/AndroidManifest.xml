@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyTresh">
         <activity
+            android:name=".presentation.WorkerActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ClientActivity"
             android:exported="false" />
         <activity

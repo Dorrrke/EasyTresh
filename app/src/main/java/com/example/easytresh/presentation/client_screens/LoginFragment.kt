@@ -1,6 +1,5 @@
 package com.example.easytresh.presentation.client_screens
 
-import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -12,10 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.easytresh.MainApp
 import com.example.easytresh.R
-import com.example.easytresh.domain.LoginViewModel
-import com.example.easytresh.domain.RegisterViewModel
+import com.example.easytresh.domain.clientViewModels.LoginViewModel
 import com.example.easytresh.domain.ViewModelFactories.LoginViewModelFactory
-import javax.inject.Inject
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
@@ -24,7 +21,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this, LoginViewModelFactory(activity?.application as MainApp)).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this, LoginViewModelFactory(activity?.application as MainApp)).get(
+            LoginViewModel::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

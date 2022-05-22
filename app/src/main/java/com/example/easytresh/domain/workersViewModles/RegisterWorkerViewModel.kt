@@ -1,16 +1,15 @@
-package com.example.easytresh.domain
+package com.example.easytresh.domain.workersViewModles
 
 import android.app.Application
-import android.icu.util.LocaleData
 import com.example.easytresh.MainApp
+import com.example.easytresh.domain.BaseViewModel
 import com.example.easytresh.repository.AppRepository
 import com.example.easytresh.repository.database.entity.Users
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
 import java.util.*
 import javax.inject.Inject
 
-class RegisterViewModel(application: Application) : BaseViewModel(application) {
+class RegisterWorkerViewModel(application: Application) : BaseViewModel(application) {
 
     @Inject
     lateinit var repository: AppRepository
@@ -19,9 +18,7 @@ class RegisterViewModel(application: Application) : BaseViewModel(application) {
         (application as MainApp).appComponent.inject(this)
     }
 
-
     fun correctValue(fullName: String, phone: String, pass: String, repeatPass: String): Boolean {
-
         var currentDate = Date()
         var dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
         val regexStr = "^\\+?[78][-\\(]?\\d{3}\\)?-?\\d{3}-?\\d{2}-?\\d{2}\$".toRegex()

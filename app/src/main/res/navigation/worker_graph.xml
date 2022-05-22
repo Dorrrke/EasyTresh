@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/worker_graph"
+    app:startDestination="@id/loginWorkerFragment">
+
+    <fragment
+        android:id="@+id/loginWorkerFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.LoginWorkerFragment"
+        android:label="LoginWorkerFragment" >
+        <action
+            android:id="@+id/action_loginWorkerFragment_to_registerWorkerFragment"
+            app:destination="@id/registerWorkerFragment" />
+        <action
+            android:id="@+id/action_loginWorkerFragment_to_mainWorkerFragment"
+            app:destination="@id/mainWorkerFragment"
+            app:popUpTo="@+id/worker_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerWorkerFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.RegisterWorkerFragment"
+        android:label="RegisterWorkerFragment" >
+        <action
+            android:id="@+id/action_registerWorkerFragment_to_loginWorkerFragment"
+            app:destination="@id/loginWorkerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainWorkerFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.MainWorkerFragment"
+        android:label="fragment_workers_main"
+        tools:layout="@layout/fragment_workers_main" />
+</navigation>

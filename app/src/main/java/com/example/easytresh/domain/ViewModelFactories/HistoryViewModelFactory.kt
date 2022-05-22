@@ -3,8 +3,7 @@ package com.example.easytresh.domain.ViewModelFactories
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.easytresh.domain.HistoryViewModel
-import com.example.easytresh.domain.LoginViewModel
+import com.example.easytresh.domain.clientViewModels.HistoryViewModel
 
 class HistoryViewModelFactory (application: Application): ViewModelProvider.Factory {
     var app = application

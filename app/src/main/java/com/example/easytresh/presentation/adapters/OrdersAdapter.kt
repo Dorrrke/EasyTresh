@@ -1,6 +1,5 @@
-package com.example.easytresh.presentation
+package com.example.easytresh.presentation.adapters
 
-import android.app.Application
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,7 +48,7 @@ class OrdersAdapter (private val orders: List<Orders>, application: MainApp): Re
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.order_items, parent, false)
-        return OrdersAdapter.OrderViewHolder(itemView)
+        return OrderViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {

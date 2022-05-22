@@ -7,13 +7,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.easytresh.MainApp
 import com.example.easytresh.R
-import com.example.easytresh.domain.HistoryViewModel
-import com.example.easytresh.domain.OrderViewModel
-import com.example.easytresh.domain.ViewModelFactories.HistoryViewModelFactory
+import com.example.easytresh.domain.clientViewModels.OrderViewModel
 import com.example.easytresh.domain.ViewModelFactories.OrderViewModelFactory
 import com.example.easytresh.repository.database.entity.Addresses
 import com.example.easytresh.repository.database.entity.Orders
-import javax.inject.Inject
 
 class OrderFragment : Fragment(R.layout.fragment_order) {
 

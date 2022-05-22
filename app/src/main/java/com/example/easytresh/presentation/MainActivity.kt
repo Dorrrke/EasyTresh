@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
             val choice = Intent(this, ClientActivity::class.java)
             startActivity(choice)
         }
+        workerBtn.setOnClickListener {
+            val choice = Intent(this, WorkerActivity::class.java)
+            startActivity(choice)
+        }
     }
 
 }

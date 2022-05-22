@@ -10,6 +10,9 @@ interface OrdersDao {
     @Query("SELECT * FROM Orders")
     fun getAllOrders(): LiveData<List<Orders>>
 
+    @Query("SELECT * FROM Orders WHERE Relevance=1")
+    fun getRelevanceOrders(): LiveData<List<Orders>>
+
     @Query("SELECT * FROM Orders WHERE OrderId=:id")
     fun getOrderById(id: Int): Orders
 

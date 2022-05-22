@@ -3,20 +3,16 @@ package com.example.easytresh.presentation.client_screens
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easytresh.MainApp
 import com.example.easytresh.R
-import com.example.easytresh.domain.HistoryViewModel
-import com.example.easytresh.domain.LoginViewModel
+import com.example.easytresh.domain.clientViewModels.HistoryViewModel
 import com.example.easytresh.domain.ViewModelFactories.HistoryViewModelFactory
-import com.example.easytresh.domain.ViewModelFactories.LoginViewModelFactory
-import com.example.easytresh.presentation.OrdersAdapter
+import com.example.easytresh.presentation.adapters.OrdersAdapter
 import com.example.easytresh.repository.database.entity.Orders
-import javax.inject.Inject
 
 class HistoryFragment() : Fragment(R.layout.fragment_history) {
 
