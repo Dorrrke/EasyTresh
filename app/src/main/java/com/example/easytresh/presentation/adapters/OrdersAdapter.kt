@@ -9,9 +9,11 @@ import com.example.easytresh.MainApp
 import com.example.easytresh.R
 import com.example.easytresh.repository.AppRepository
 import com.example.easytresh.repository.database.entity.Orders
+import com.example.easytresh.repository.database.pojo.OrdersPojo
+import com.example.easytresh.repository.database.pojo.OrdersPojoItem
 import javax.inject.Inject
 
-class OrdersAdapter (private val orders: List<Orders>, application: MainApp): RecyclerView.Adapter<OrdersAdapter.OrderViewHolder>(){
+class OrdersAdapter(private val orders: List<OrdersPojoItem>, application: MainApp): RecyclerView.Adapter<OrdersAdapter.OrderViewHolder>(){
 
     @Inject
     lateinit var repository: AppRepository
@@ -52,19 +54,19 @@ class OrdersAdapter (private val orders: List<Orders>, application: MainApp): Re
     }
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
-        var addr = repository.getAddressById(orders[position].addressId)
+        var addr = orders[position].addressId
         holder.dataText!!.text = orders[position].date
-        holder.typeText!!.text = orders[position].type
+        holder.typeText!!.text = orders[position].trashType
         holder.sizeText!!.text = orders[position].size
-        holder.country!!.text = addr.country
-        holder.city!!.text = addr.city
-        holder.street!!.text = addr.street
-        holder.house!!.text = addr.houseNumber.toString()
-        holder.frame!!.text = addr.frame.toString()
-        holder.door!!.text = addr.frontDoor.toString()
-        holder.floor!!.text = addr.floor.toString()
-        holder.flat!!.text = addr.flat.toString()
+//        holder.country!!.text = addr.country
+//        holder.city!!.text = addr.city
+//        holder.street!!.text = addr.street
+//        holder.house!!.text = addr.houseNumber.toString()
+//        holder.frame!!.text = addr.frame.toString()
+//        holder.door!!.text = addr.frontDoor.toString()
+//        holder.floor!!.text = addr.floor.toString()
+//        holder.flat!!.text = addr.flat.toString()
     }
 
-    override fun getItemCount() = orders.size
+    override fun getItemCount(): Int = orders.size
 }

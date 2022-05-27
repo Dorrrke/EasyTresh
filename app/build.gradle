@@ -35,7 +35,7 @@ android {
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.21")
     //Navi
     def nav_version = "2.4.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

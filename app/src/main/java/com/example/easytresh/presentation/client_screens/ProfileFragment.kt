@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.easytresh.MainApp
 import com.example.easytresh.R
 import com.example.easytresh.domain.clientViewModels.ProfileViewModel
 import com.example.easytresh.domain.ViewModelFactories.ProfileViewModelFactory
+import com.example.easytresh.repository.database.pojo.ClientPojoItem
 
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -29,9 +31,15 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var client = viewModel.getClient(MainFragment.userId)
-        view.findViewById<TextView>(R.id.nameView).text = client.userName
-        view.findViewById<TextView>(R.id.phoneView).text = client.userPhone
-        view.findViewById<TextView>(R.id.dateView).text = client.registrationDate
+        viewModel.catchClient(MainFragment.userId)
+        viewModel.getClient().observe(viewLifecycleOwner, Observer { fillFields(it) })
+    }
+
+    private fun fillFields(it: ClientPojoItem?) {
+        if (it != null) {
+            view?.findViewById<TextView>(R.id.nameView)!!.text = it.name
+            view?.findViewById<TextView>(R.id.phoneView)!!.text = it.phone
+            view?.findViewById<TextView>(R.id.dateView)!!.text = it.registrationDate
+        }
     }
 }

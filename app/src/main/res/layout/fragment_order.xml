@@ -11,117 +11,46 @@
         android:id="@+id/appCompatTextView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Order"
         android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Детали заказа"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5" />
-
-    <EditText
-        android:id="@+id/editFlat"
-        android:layout_width="97dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:hint="Квартира"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editFloor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editFloor" />
-
-    <EditText
-        android:id="@+id/editCity"
-        android:layout_width="156dp"
-        android:layout_height="36dp"
-        android:ems="10"
-        android:hint="Город"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editCountry"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editCountry"
-        app:layout_constraintTop_toTopOf="@+id/editCountry" />
-
-    <EditText
-        android:id="@+id/editHouse"
-        android:layout_width="105dp"
-        android:layout_height="36dp"
-        android:ems="10"
-        android:hint="Номер дома"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editStreet"
-        app:layout_constraintEnd_toStartOf="@+id/editFrame"
-        app:layout_constraintStart_toEndOf="@+id/editStreet"
-        app:layout_constraintTop_toTopOf="@+id/editStreet" />
-
-    <CheckBox
-        android:id="@+id/saveAdrCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сохранить адресс"
-        app:layout_constraintBottom_toBottomOf="@+id/orderBtn"
-        app:layout_constraintEnd_toStartOf="@+id/orderBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/orderBtn" />
-
-    <EditText
-        android:id="@+id/editDoor"
-        android:layout_width="97dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Подъезд"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/editStreet"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editStreet"
-        app:layout_constraintTop_toBottomOf="@+id/editStreet" />
-
-    <EditText
-        android:id="@+id/editFloor"
-        android:layout_width="97dp"
-        android:layout_height="36dp"
-        android:ems="10"
-        android:hint="Этаж"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editDoor"
-        app:layout_constraintEnd_toStartOf="@+id/editFlat"
-        app:layout_constraintStart_toEndOf="@+id/editDoor"
-        app:layout_constraintTop_toTopOf="@+id/editDoor" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView5"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView5"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5"
+        app:layout_constraintVertical_bias="0.004" />
 
     <TextView
         android:id="@+id/typeView"
         android:layout_width="80dp"
         android:layout_height="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="152dp"
         android:text="Тип мусора"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22" />
 
     <EditText
         android:id="@+id/editSize"
-        android:layout_width="134dp"
+        android:layout_width="135dp"
         android:layout_height="36dp"
         android:ems="10"
         android:hint="Объем"
@@ -129,19 +58,18 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/sizeView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toEndOf="@+id/sizeView"
-        app:layout_constraintTop_toTopOf="@+id/sizeView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/sizeView" />
 
     <CheckBox
         android:id="@+id/domesticCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:layout_marginStart="24dp"
         android:text="Бытовой"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/typeView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toEndOf="@+id/typeView"
         app:layout_constraintTop_toTopOf="@+id/typeView"
         app:layout_constraintVertical_bias="0.0" />
@@ -154,86 +82,218 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/domesticCheckBox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toEndOf="@+id/domesticCheckBox"
-        app:layout_constraintTop_toTopOf="@+id/domesticCheckBox"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/domesticCheckBox" />
+
 
     <TextView
         android:id="@+id/sizeView"
         android:layout_width="135dp"
         android:layout_height="36dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="Объем (мешков)"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/typeView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/typeView"
-        app:layout_constraintTop_toBottomOf="@+id/typeView" />
-
-    <EditText
-        android:id="@+id/editStreet"
-        android:layout_width="105dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Улица"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/editCountry"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="@+id/editCountry"
-        app:layout_constraintTop_toBottomOf="@+id/editCountry" />
-
-    <EditText
-        android:id="@+id/editFrame"
-        android:layout_width="105dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:hint="Корпус"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editHouse"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editHouse" />
-
-    <EditText
-        android:id="@+id/editCountry"
-        android:layout_width="156dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="296dp"
-        android:ems="10"
-        android:hint="Страна"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/typeView"
+        app:layout_constraintVertical_bias="0.006" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="176dp"
         android:text="Адресс"
         android:textSize="17sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/layoutAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_tabel"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/choseAddressBtn"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:text="Город"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cityAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:text="город"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:text="Улица"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/streetAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:text="улица"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/houseAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:text="дом"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/frameAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:text="корп"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Подъезд"
+                android:textSize="17sp"
+                android:textStyle="bold" />/>
+
+            <TextView
+                android:id="@+id/doorAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:text="п"
+                android:textSize="17sp"
+                android:textStyle="italic" />/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Этаж"
+                android:textSize="17sp"
+                android:textStyle="bold" />/>
+
+            <TextView
+                android:id="@+id/floorAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="э"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Квартира"
+                android:textSize="17sp"
+                android:textStyle="bold" />/>
+
+            <TextView
+                android:id="@+id/flatAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:text="кв"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/orderBtn"
         android:layout_width="152dp"
-        android:layout_height="57dp"
+        android:layout_height="70dp"
         android:text="Оформить заказ"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editFloor"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.925" />
+
+    <Button
+        android:id="@+id/choseAddressBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Choise Address"
+        app:layout_constraintBottom_toTopOf="@+id/orderBtn"
+        app:layout_constraintEnd_toEndOf="@+id/orderBtn"
+        app:layout_constraintStart_toStartOf="@+id/orderBtn"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

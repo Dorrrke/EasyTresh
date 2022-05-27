@@ -6,16 +6,14 @@ import androidx.lifecycle.MutableLiveData
 import com.example.easytresh.MainApp
 import com.example.easytresh.domain.BaseViewModel
 import com.example.easytresh.repository.AppRepository
-import com.example.easytresh.repository.database.pojo.OrdersPojoItem
+import com.example.easytresh.repository.database.pojo.AddressesPojoItem
 import com.example.easytresh.repository.server.ServerApi
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class HistoryViewModel(application: Application): BaseViewModel(application) {
-
-    var liveDataItems = MutableLiveData<List<OrdersPojoItem>>()
+class AddAddressViewModel(application: Application) : BaseViewModel(application) {
     private val compositeDisposable = CompositeDisposable()
 
     @Inject
@@ -24,23 +22,26 @@ class HistoryViewModel(application: Application): BaseViewModel(application) {
     @Inject
     lateinit var server: ServerApi
 
+    var resLiveData = MutableLiveData<String>()
+
     init {
         (application as MainApp).appComponent.inject(this)
     }
 
-    fun getOrders(userId: Int) {
-        server?.let {
-            compositeDisposable.add(server.getOrdersByUserId(userId)
+
+    fun addAddress(addressesPojoItem: AddressesPojoItem) {
+        compositeDisposable.add(
+            server.addAddress(addressesPojoItem)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnError { t: Throwable -> Log.d("ServerCommunicator", t.message!!) }
-                .subscribe { list -> liveDataItems.value = list})
-        }
+                .doOnError { t: Throwable -> Log.d("ServerCommunicator", t.stackTrace.toString()) }
+                .subscribe { it ->
+                    Log.e(" Add Result", it.toString())
+                    resLiveData.value = it
+                })
     }
 
-    fun getAllOrders(): MutableLiveData<List<OrdersPojoItem>> {
-//        var res = repository.getAllOrders().value
-//        return repository.getAllOrders()
-        return liveDataItems
+    fun getResult(): MutableLiveData<String> {
+        return resLiveData
     }
 }

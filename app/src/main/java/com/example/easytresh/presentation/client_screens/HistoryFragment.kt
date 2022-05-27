@@ -12,7 +12,7 @@ import com.example.easytresh.R
 import com.example.easytresh.domain.clientViewModels.HistoryViewModel
 import com.example.easytresh.domain.ViewModelFactories.HistoryViewModelFactory
 import com.example.easytresh.presentation.adapters.OrdersAdapter
-import com.example.easytresh.repository.database.entity.Orders
+import com.example.easytresh.repository.database.pojo.OrdersPojoItem
 
 class HistoryFragment() : Fragment(R.layout.fragment_history) {
 
@@ -29,10 +29,13 @@ class HistoryFragment() : Fragment(R.layout.fragment_history) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ordersView = view.findViewById<RecyclerView>(R.id.recyclerView)
+        viewModel.getOrders(MainFragment.userId)
+        var k = ordersView
         var orders = viewModel.getAllOrders().observe(viewLifecycleOwner, Observer { it?.let { initRecyclerView(it) } })
+
     }
 
-    private fun initRecyclerView(orders: List<Orders>) {
+    private fun initRecyclerView(orders: List<OrdersPojoItem>) {
         val orderAdapter = OrdersAdapter(orders, activity?.application as MainApp)
         ordersView.layoutManager = LinearLayoutManager(context)
         ordersView.adapter = orderAdapter

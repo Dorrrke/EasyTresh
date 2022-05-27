@@ -7,12 +7,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.easytresh.MainApp
 import com.example.easytresh.R
 import com.example.easytresh.domain.clientViewModels.LoginViewModel
 import com.example.easytresh.domain.ViewModelFactories.LoginViewModelFactory
+import com.example.easytresh.repository.database.pojo.ClientPojoItem
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
@@ -34,11 +36,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         singInBtn.setOnClickListener {
             val phone = view.findViewById<EditText>(R.id.editTextPhone).text.toString()
             val pass = view.findViewById<EditText>(R.id.editTextPass).text.toString()
-            val res = viewModel.verf(phone, pass)
-            if (res != null)
+            if (phone.isNotEmpty() and pass.isNotEmpty())
             {
-                findNavController().navigate(R.id.action_loginFragment_to_mainFragment,
-                bundleOf(MainFragment.userIdKey to res.UserId))
+                viewModel.verification(phone, pass)
+                viewModel.resultVerification().observe(viewLifecycleOwner, Observer { checkResult(it, phone) })
             }
             else
             {
@@ -51,4 +52,24 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
+
+    private fun checkResult(it: Boolean?, phone: String) {
+        if (it == true){
+            viewModel.catchClient(phone)
+            viewModel.getClient().observe(viewLifecycleOwner, Observer {  findNavController().navigate(R.id.action_loginFragment_to_mainFragment,
+                bundleOf(MainFragment.userIdKey to it.userId)) })
+        }
+        else{
+            val toast = Toast.makeText(context, "No Success.This phone number is already registered", Toast.LENGTH_SHORT)
+            toast.show()
+        }
+    }
+
+//    private fun loggingUser(it: ClientPojoItem?) {
+//        if (it != null) {
+//            findNavController().navigate(R.id.action_loginFragment_to_mainFragment,
+//                bundleOf(MainFragment.userIdKey to it.userId))
+//        }
+//    }
 }
+

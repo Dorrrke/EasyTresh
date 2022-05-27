@@ -6,6 +6,7 @@ import com.example.easytresh.di.component.AppComponent
 import com.example.easytresh.di.component.DaggerAppComponent
 import com.example.easytresh.di.module.DatabaseModule
 import com.example.easytresh.di.module.RepositoryModule
+import com.example.easytresh.di.module.RetrofitModule
 
 import com.example.easytresh.repository.database.AppDatabase
 
@@ -21,7 +22,7 @@ class MainApp : Application(){
     }
 
     private fun initRoom() {
-        database = Room.databaseBuilder(this, AppDatabase::class.java, "EasyTrashLocalDB")
+        database = Room.databaseBuilder(this, AppDatabase::class.java, "EasyTrashDBLocal")
             .allowMainThreadQueries()
             .build()
     }
@@ -30,6 +31,7 @@ class MainApp : Application(){
         appComponent = DaggerAppComponent.builder()
             .databaseModule(DatabaseModule(this!!.database!!))
             .repositoryModule(RepositoryModule())
+            .retrofitModule(RetrofitModule())
             .build()
     }
 }

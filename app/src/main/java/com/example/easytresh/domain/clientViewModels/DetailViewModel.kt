@@ -6,15 +6,16 @@ import androidx.lifecycle.MutableLiveData
 import com.example.easytresh.MainApp
 import com.example.easytresh.domain.BaseViewModel
 import com.example.easytresh.repository.AppRepository
-import com.example.easytresh.repository.database.entity.Users
-import com.example.easytresh.repository.database.pojo.ClientPojoItem
+import com.example.easytresh.repository.database.pojo.AddressesPojoItem
 import com.example.easytresh.repository.server.ServerApi
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
+import kotlin.properties.Delegates
 
-class ProfileViewModel(application: Application): BaseViewModel(application) {
+class DetailViewModel(application: Application): BaseViewModel(application)  {
+    private val compositeDisposable = CompositeDisposable()
 
     @Inject
     lateinit var repository: AppRepository
@@ -22,23 +23,31 @@ class ProfileViewModel(application: Application): BaseViewModel(application) {
     @Inject
     lateinit var server: ServerApi
 
+    var addressId by Delegates.notNull<Int>()
+
+    var addressLiveData = MutableLiveData<List<AddressesPojoItem>>()
+
+
     init {
+        addressId = -1
         (application as MainApp).appComponent.inject(this)
     }
 
-    var clientLiveData = MutableLiveData<ClientPojoItem>()
 
-    val compositeDisposable = CompositeDisposable()
+    fun choseAddress(id: Int){
+        addressId = id
+    }
 
-    fun catchClient(id: Int) {
-        compositeDisposable.add(server.getClientById(id)
+
+    fun getAddressesList(id: Int){
+        compositeDisposable.add(server.getAddressesByClientId(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnError { t: Throwable -> Log.d("ServerCommunicator", t.stackTrace.toString()) }
-            .subscribe{it -> clientLiveData.value = it})
+            .subscribe{ it -> addressLiveData.value = it })
     }
 
-    fun getClient(): MutableLiveData<ClientPojoItem> {
-        return clientLiveData
+    fun getAddresses(): MutableLiveData<List<AddressesPojoItem>> {
+        return addressLiveData
     }
 }
