@@ -1,14 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.workers_screens.WorkerProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="217dp"
+        android:layout_height="89dp"
+        android:text="Profile"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/nameTitle"
+        android:layout_width="106dp"
+        android:layout_height="35dp"
+        android:text="Full Name"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2"
+        app:layout_constraintVertical_bias="0.221"
+        tools:text="Full Name" />
+
+    <TextView
+        android:id="@+id/nameEdit"
+        android:layout_width="106dp"
+        android:layout_height="33dp"
+        android:text="TextView"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/nameTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nameTitle"
+        app:layout_constraintTop_toTopOf="@+id/nameTitle"
+        tools:text="Full Name" />
+
+    <TextView
+        android:id="@+id/phoneTitle"
+        android:layout_width="106dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:text="Phone Number"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nameTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameTitle"
+        app:layout_constraintTop_toBottomOf="@+id/nameTitle"
+        app:layout_constraintVertical_bias="0.118"
+        tools:text="Phone Number" />
+
+    <TextView
+        android:id="@+id/phoneEdit"
+        android:layout_width="106dp"
+        android:layout_height="41dp"
+        android:text="TextView"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/phoneTitle"
+        app:layout_constraintTop_toTopOf="@+id/phoneTitle"
+        tools:text="Phone Number" />
+
+    <TextView
+        android:id="@+id/dateTitle"
+        android:layout_width="106dp"
+        android:layout_height="35dp"
+        android:text="Registration date"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/phoneTitle"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/phoneTitle"
+        app:layout_constraintTop_toBottomOf="@+id/phoneTitle"
+        app:layout_constraintVertical_bias="0.219"
+        tools:text="Registration Date" />
+
+    <TextView
+        android:id="@+id/dateEdit"
+        android:layout_width="106dp"
+        android:layout_height="41dp"
+        android:text="TextView"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/dateTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dateTitle"
+        app:layout_constraintTop_toTopOf="@+id/dateTitle"
+        tools:text="Registration Date" />
+</androidx.constraintlayout.widget.ConstraintLayout>

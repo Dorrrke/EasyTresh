@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/layout_tabel"
+    android:layout_marginBottom="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +50,8 @@
             android:textSize="17sp"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"/>
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"/>
         <TextView
             android:id="@+id/trashTypeText"
             android:layout_width="wrap_content"
@@ -58,7 +61,8 @@
             android:textSize="17sp"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"/>
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,7 +71,8 @@
             android:textSize="17sp"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"/>
         <TextView
             android:id="@+id/sizeText"
             android:layout_width="wrap_content"
@@ -77,196 +82,7 @@
             android:textSize="17sp"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"/>
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Адресс"
-        android:textStyle="bold"
-        android:textSize="17sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Страна"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:id="@+id/countryText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Страна"
-            android:textStyle="italic"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Город"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:id="@+id/cityText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="город"
-            android:textStyle="italic"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Улица"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:id="@+id/streetText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="улица"
-            android:textStyle="italic"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Дом"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:id="@+id/houseText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="дом"
-            android:textStyle="italic"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Корпус"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:id="@+id/frameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="корпус"
-            android:textStyle="italic"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Подъезд"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:id="@+id/doorText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="подъезд"
-            android:textStyle="italic"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Этаж"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:id="@+id/floorText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="этаж"
-            android:textStyle="italic"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Квартира"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <TextView
-            android:id="@+id/flatText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="кв"
-            android:textStyle="italic"
-            android:textSize="17sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-
-    </LinearLayout>
-
 </LinearLayout>

@@ -3,105 +3,144 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.client_screens.orderFragment">
-
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView5"
+        android:id="@+id/appCompatTextView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order"
+        android:text="Detail"
         android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Информация о заказе"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.182" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Адрес"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.401" />
 
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView4"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="314dp"
         android:layout_height="wrap_content"
-        android:text="Детали заказа"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView5"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/appCompatTextView5"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5"
-        app:layout_constraintVertical_bias="0.02" />
-
-    <EditText
-        android:id="@+id/editSize"
-        android:layout_width="127dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="96dp"
-        android:ems="10"
-        android:hint="Объем"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/appCompatTextView8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView7"
+        app:layout_constraintVertical_bias="0.333">
 
-    <CheckBox
-        android:id="@+id/domesticCheckBox"
-        android:layout_width="121dp"
-        android:layout_height="42dp"
-        android:text="Бытовой"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4"
-        app:layout_constraintVertical_bias="0.041" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/buildingCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:text="Строительный"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/domesticCheckBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toEndOf="@+id/domesticCheckBox"
-        app:layout_constraintTop_toTopOf="@+id/domesticCheckBox" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="Дата заказа"
+                android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Адресс"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editSize"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="@+id/editSize"
-        app:layout_constraintTop_toBottomOf="@+id/editSize"
-        app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/orderDetailDataField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дата заказа" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="Актуальность"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/orderDetailRelevanceField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Актуальность" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="Тип мусора"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/orderDetailTrashTypeField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="Тип мусора" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="Объем"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/orderDetailSizeField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Объем" />
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutAddress"
-        android:layout_width="400dp"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/layout_tabel"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/choseAddressBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3">
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView8"
+        app:layout_constraintVertical_bias="0.114">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -120,7 +159,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/cityAd"
+                android:id="@+id/cityDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -147,7 +186,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/streetAd"
+                android:id="@+id/streetDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -158,7 +197,7 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/houseAd"
+                android:id="@+id/houseDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -168,7 +207,7 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/frameAd"
+                android:id="@+id/frameDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -195,7 +234,7 @@
                 android:textStyle="bold" />/>
 
             <TextView
-                android:id="@+id/doorAd"
+                android:id="@+id/doorDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -217,7 +256,7 @@
                 android:textStyle="bold" />/>
 
             <TextView
-                android:id="@+id/floorAd"
+                android:id="@+id/floorDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -239,7 +278,7 @@
                 android:textStyle="bold" />/>
 
             <TextView
-                android:id="@+id/flatAd"
+                android:id="@+id/flatDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -250,38 +289,28 @@
                 android:textStyle="italic" />
         </LinearLayout>
 
-
     </LinearLayout>
 
     <Button
-        android:id="@+id/orderBtn"
-        android:layout_width="133dp"
-        android:layout_height="0dp"
-        android:text="Оформить"
-        app:layout_constraintBottom_toBottomOf="@+id/choseAddressBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.204"
-        app:layout_constraintStart_toEndOf="@+id/appCompatTextView3"
-        app:layout_constraintTop_toTopOf="@+id/choseAddressBtn" />
-
-    <Button
-        android:id="@+id/choseAddressBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginTop="194dp"
-        android:text="Choise Address"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/chatchOrderBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="-39dp" />
+        android:text="Взять в работу"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842" />
+
+    <Button
+        android:id="@+id/CompliteBnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выполнено"
+        app:layout_constraintBottom_toBottomOf="@+id/chatchOrderBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chatchOrderBtn"
+        app:layout_constraintTop_toTopOf="@+id/chatchOrderBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

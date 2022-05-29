@@ -33,7 +33,6 @@ class RegisterViewModel(application: Application) : BaseViewModel(application) {
 
     var liveData = MutableLiveData<Boolean>()
 
-    private var check = 2
 
     init {
         (application as MainApp).appComponent.inject(this)

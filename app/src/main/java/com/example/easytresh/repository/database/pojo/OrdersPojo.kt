@@ -11,7 +11,7 @@ data class OrdersPojo(
 data class OrdersPojoItem(
 
 	@field:SerializedName("date")
-	val date: String? = null,
+	var date: String? = null,
 
 	@field:SerializedName("trashType")
 	val trashType: String? = null,

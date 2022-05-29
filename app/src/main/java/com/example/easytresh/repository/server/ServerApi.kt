@@ -2,10 +2,7 @@ package com.example.easytresh.repository.server
 
 import com.example.easytresh.repository.database.entity.Orders
 import com.example.easytresh.repository.database.entity.Users
-import com.example.easytresh.repository.database.pojo.AddressesPojoItem
-import com.example.easytresh.repository.database.pojo.ClientPojoItem
-import com.example.easytresh.repository.database.pojo.OrdersPojo
-import com.example.easytresh.repository.database.pojo.OrdersPojoItem
+import com.example.easytresh.repository.database.pojo.*
 import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.http.Body
@@ -13,6 +10,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ServerApi {
+
+    //// Users
+
     @POST("/getOrdersByUserId")
     fun getOrdersByUserId(@Body id: Int): Single<List<OrdersPojoItem>>
 
@@ -28,8 +28,45 @@ interface ServerApi {
     @POST("/checkClient")
     fun checkClient(@Body clientPojoItem: ClientPojoItem): Single<String>
 
+    ////Workers
+
+    @POST("/createWorker")
+    fun createWorker(@Body workersPojoItem: WorkersPojoItem) : Single<String>
+
+    @POST("/checkWorker")
+    fun checkWorker(@Body workersPojoItem: WorkersPojoItem) : Single<String>
+
+    @POST("/getWorkerById")
+    fun getWorkerById(@Body id: Int) : Single<WorkersPojoItem>
+
+    @POST("/getWorker")
+    fun getWorker(@Body workersPojoItem: WorkersPojoItem) : Single<WorkersPojoItem>
+
+    ////Orders
+
     @POST("/addOrder")
     fun addOrder(@Body ordersPojoItem: OrdersPojoItem) : Single<String>
+
+    @GET("/allRelevantOrders")
+    fun allRelevantOrders() : Single<List<OrdersPojoItem>>
+
+    @POST("/getOrdersById")
+    fun getOrderById(@Body id: Int) : Single<OrdersPojoItem>
+
+    @POST("/deleteOrder")
+    fun deleteOrder(@Body id: Int) : Single<String>
+
+    @POST("/updateNOrder")
+    fun updateNOrder(@Body id: Int, state: Boolean): Single<String>
+
+    @POST("/addNotRelevantOrder")
+    fun addNOrder(@Body notRelevantOrdersPojoItem: NotRelevantOrdersPojoItem) : Single<String>
+
+    @POST("/getOrdersByWorkerId")
+    fun getNOrderByWorkerId(@Body id: Int): Single<List<NotRelevantOrdersPojoItem>>
+
+
+    ////Addresses
 
     @POST("/addAddress")
     fun addAddress(@Body addressesPojoItem: AddressesPojoItem) : Single<String>

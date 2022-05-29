@@ -12,13 +12,13 @@ import kotlin.properties.Delegates
 class MainWorkerFragment : Fragment(R.layout.fragment_workers_main) {
 
     companion object {
-        const val userIdKey = "USER_ID"
-        var userId by Delegates.notNull<Int>()
+        const val workerIdKey = "USER_ID"
+        var workerId by Delegates.notNull<Int>()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        userId = arguments?.get(userIdKey) as Int
+        workerId = arguments?.get(workerIdKey) as Int
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

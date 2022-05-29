@@ -37,9 +37,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private fun fillFields(it: ClientPojoItem?) {
         if (it != null) {
-            view?.findViewById<TextView>(R.id.nameView)!!.text = it.name
-            view?.findViewById<TextView>(R.id.phoneView)!!.text = it.phone
-            view?.findViewById<TextView>(R.id.dateView)!!.text = it.registrationDate
+            view?.findViewById<TextView>(R.id.nameField)!!.text = it.name
+            view?.findViewById<TextView>(R.id.phoneField)!!.text = it.phone
+            view?.findViewById<TextView>(R.id.dateField)!!.text = it.registrationDate
         }
     }
 }

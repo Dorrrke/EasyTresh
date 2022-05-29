@@ -26,6 +26,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainWorkersContainerView"
-        app:menu="@menu/menu_btn_main" />
+        app:menu="@menu/worker_menu_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

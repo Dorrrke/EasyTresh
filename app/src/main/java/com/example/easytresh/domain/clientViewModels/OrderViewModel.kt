@@ -27,9 +27,11 @@ class OrderViewModel(application: Application) : BaseViewModel(application) {
     @Inject
     lateinit var server: ServerApi
 
-    val compositeDisposable = CompositeDisposable()
+    private val compositeDisposable = CompositeDisposable()
 
-    var addressLiveData = MutableLiveData<AddressesPojoItem>()
+    private var addressLiveData = MutableLiveData<AddressesPojoItem>()
+
+    var resultAddingLiveData = MutableLiveData<String>()
 
     var adrrId = -1
 
@@ -55,28 +57,22 @@ class OrderViewModel(application: Application) : BaseViewModel(application) {
         adrrId = id
     }
 
-    fun setUpOrder(adr: Addresses, order: Orders) {
+    fun setUpOrder(adr: AddressesPojoItem, order: OrdersPojoItem) {
         var currentDate = Date()
         var dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
         var data = dateFormat.format(currentDate)
-        repository.insertAddress(adr)
-        var address = repository.getAddressByInfo(order.clientId, adr.street, adr.houseNumber)
-        saveOrder(address, order, data)
+        order.date = data
+        compositeDisposable.add(server.addOrder(order)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnError { t: Throwable -> Log.d("ServerCommunicator", t.stackTrace.toString()) }
+            .subscribe{ it -> resultAddingLiveData.value = it})
     }
 
-    private fun saveOrder(it: Addresses, order: Orders, data: String) {
-        var correctOrder = Orders(
-            order.OrderId,
-            data,
-            order.type,
-            order.size,
-            it.id,
-            order.relevance,
-            order.clientId
-        )
-        repository.insertOrder(correctOrder)
-        server.addOrder(OrdersPojoItem(correctOrder.date, correctOrder.type, correctOrder.clientId, correctOrder.size, correctOrder.OrderId, true, correctOrder.addressId))
+    fun getResultAdding(): MutableLiveData<String> {
+        return resultAddingLiveData
     }
+
 
 
 }

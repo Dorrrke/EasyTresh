@@ -24,26 +24,10 @@ class OrdersAdapter(private val orders: List<OrdersPojoItem>, application: MainA
         var dataText: TextView? = null
         var typeText: TextView? = null
         var sizeText: TextView? = null
-        var country: TextView? = null
-        var city: TextView? = null
-        var street: TextView? = null
-        var house: TextView? = null
-        var frame: TextView? = null
-        var door: TextView? = null
-        var floor: TextView? = null
-        var flat: TextView? = null
         init {
             dataText = itemView.findViewById(R.id.dataText)
             typeText = itemView.findViewById(R.id.trashTypeText)
             sizeText = itemView.findViewById(R.id.sizeText)
-            country = itemView.findViewById(R.id.countryText)
-            city = itemView.findViewById(R.id.cityText)
-            street = itemView.findViewById(R.id.streetText)
-            house = itemView.findViewById(R.id.houseText)
-            frame = itemView.findViewById(R.id.frameText)
-            door = itemView.findViewById(R.id.doorText)
-            floor = itemView.findViewById(R.id.floorText)
-            flat = itemView.findViewById(R.id.flatText)
         }
     }
 
@@ -58,14 +42,6 @@ class OrdersAdapter(private val orders: List<OrdersPojoItem>, application: MainA
         holder.dataText!!.text = orders[position].date
         holder.typeText!!.text = orders[position].trashType
         holder.sizeText!!.text = orders[position].size
-//        holder.country!!.text = addr.country
-//        holder.city!!.text = addr.city
-//        holder.street!!.text = addr.street
-//        holder.house!!.text = addr.houseNumber.toString()
-//        holder.frame!!.text = addr.frame.toString()
-//        holder.door!!.text = addr.frontDoor.toString()
-//        holder.floor!!.text = addr.floor.toString()
-//        holder.flat!!.text = addr.flat.toString()
     }
 
     override fun getItemCount(): Int = orders.size

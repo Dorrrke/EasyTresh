@@ -11,13 +11,25 @@
         android:label="fragment_worker_profile"
         tools:layout="@layout/fragment_worker_profile" />
     <fragment
-        android:id="@+id/ordersListFragment"
+        android:id="@+id/workersOrdersList"
         android:name="com.example.easytresh.presentation.workers_screens.OrdersListFragment"
         android:label="fragment_orders_list"
-        tools:layout="@layout/fragment_orders_list" />
+        tools:layout="@layout/fragment_workers_orders_list" >
+        <action
+            android:id="@+id/action_workersOrdersList_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/workHistoryFragment"
         android:name="com.example.easytresh.presentation.workers_screens.WorkHistoryFragment"
         android:label="fragment_work_history"
         tools:layout="@layout/fragment_work_history" />
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.OrderDetailFragment"
+        android:label="OrderDetailFragment" />
+    <fragment
+        android:id="@+id/ordersInWorkFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.OrdersInWorkFragment"
+        android:label="OrdersInWorkFragment" />
 </navigation>
