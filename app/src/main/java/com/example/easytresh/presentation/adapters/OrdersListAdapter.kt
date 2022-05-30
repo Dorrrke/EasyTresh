@@ -18,22 +18,24 @@ class OrdersListAdapter(
     private val orders: List<OrdersPojoItem>,
     application: MainApp,
     navController: NavController
-): RecyclerView.Adapter<OrdersListAdapter.OrdersListViewHolder>() {
+) : RecyclerView.Adapter<OrdersListAdapter.OrdersListViewHolder>() {
     var navController = navController
-    class OrdersListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-            var dataText: TextView? = null
-            var typeText: TextView? = null
-            var sizeText: TextView? = null
-            var relevantText: TextView? = null
-            var layout: LinearLayout? = null
-            init {
-                dataText = itemView.findViewById(R.id.orderDataField)
-                relevantText = itemView.findViewById(R.id.orderRelevanceField)
-                typeText = itemView.findViewById(R.id.orderTrashTypeField)
-                sizeText = itemView.findViewById(R.id.orderSizeField)
-                layout = itemView.findViewById(R.id.listLayout)
-            }
+
+    class OrdersListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var dataText: TextView? = null
+        var typeText: TextView? = null
+        var sizeText: TextView? = null
+        var relevantText: TextView? = null
+        var layout: LinearLayout? = null
+
+        init {
+            dataText = itemView.findViewById(R.id.orderDataField)
+            relevantText = itemView.findViewById(R.id.orderRelevanceField)
+            typeText = itemView.findViewById(R.id.orderTrashTypeField)
+            sizeText = itemView.findViewById(R.id.orderSizeField)
+            layout = itemView.findViewById(R.id.listLayout)
         }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrdersListViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -47,10 +49,11 @@ class OrdersListAdapter(
         holder.sizeText!!.text = orders[position]!!.size
         holder.relevantText!!.text = orders[position]!!.relevance.toString()
         holder.layout!!.setOnClickListener {
-            navController.navigate(R.id.action_workersOrdersList_to_orderDetailFragment, bundleOf(OrderDetailFragment.orderKey to orders[position].orderId))
+            navController.navigate(
+                R.id.action_workersOrdersList_to_orderDetailFragment,
+                bundleOf(OrderDetailFragment.orderKey to orders[position].orderId)
+            )
         }
     }
-
     override fun getItemCount(): Int = orders.size
-
 }

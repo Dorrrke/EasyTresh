@@ -72,7 +72,4 @@ class OrderViewModel(application: Application) : BaseViewModel(application) {
     fun getResultAdding(): MutableLiveData<String> {
         return resultAddingLiveData
     }
-
-
-
 }

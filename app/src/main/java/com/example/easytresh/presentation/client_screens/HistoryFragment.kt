@@ -11,7 +11,9 @@ import com.example.easytresh.MainApp
 import com.example.easytresh.R
 import com.example.easytresh.domain.clientViewModels.HistoryViewModel
 import com.example.easytresh.domain.ViewModelFactories.HistoryViewModelFactory
+import com.example.easytresh.presentation.adapters.CompleteOrdersAdapter
 import com.example.easytresh.presentation.adapters.OrdersAdapter
+import com.example.easytresh.repository.database.pojo.NotRelevantOrdersPojoItem
 import com.example.easytresh.repository.database.pojo.OrdersPojoItem
 
 class HistoryFragment() : Fragment(R.layout.fragment_history) {
@@ -19,6 +21,7 @@ class HistoryFragment() : Fragment(R.layout.fragment_history) {
 
     lateinit var viewModel: HistoryViewModel
     lateinit var ordersView: RecyclerView
+    lateinit var completeOrdersView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +32,17 @@ class HistoryFragment() : Fragment(R.layout.fragment_history) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ordersView = view.findViewById<RecyclerView>(R.id.recyclerView)
+        completeOrdersView = view.findViewById(R.id.recyclerActivityView)
         viewModel.getOrders(MainFragment.userId)
-        var k = ordersView
-        var orders = viewModel.getAllOrders().observe(viewLifecycleOwner, Observer { it?.let { initRecyclerView(it) } })
+        viewModel.getCompleteOrders(MainFragment.userId)
+        viewModel.getAllOrders().observe(viewLifecycleOwner, Observer { it?.let { initRecyclerView(it) } })
+        viewModel.getAllCompleteOrders().observe(viewLifecycleOwner, Observer { it?.let { initRecyclerActivityView(it) } })
+    }
+
+    private fun initRecyclerActivityView(it: List<NotRelevantOrdersPojoItem>) {
+        var adapter = CompleteOrdersAdapter(it, activity?.application as MainApp)
+        completeOrdersView.layoutManager = LinearLayoutManager(context)
+        completeOrdersView.adapter = adapter
 
     }
 

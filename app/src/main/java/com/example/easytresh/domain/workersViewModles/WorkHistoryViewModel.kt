@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.easytresh.MainApp
 import com.example.easytresh.domain.BaseViewModel
 import com.example.easytresh.repository.AppRepository
-import com.example.easytresh.repository.database.pojo.OrdersPojo
+import com.example.easytresh.repository.database.pojo.NotRelevantOrdersPojoItem
 import com.example.easytresh.repository.database.pojo.OrdersPojoItem
 import com.example.easytresh.repository.server.ServerApi
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -14,10 +14,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class OrdersListViewModel(application: Application) : BaseViewModel(application) {
-
-    var liveDataItems = MutableLiveData<List<OrdersPojoItem>>()
-    private val compositeDisposable = CompositeDisposable()
+class WorkHistoryViewModel (application: Application): BaseViewModel(application) {
 
     @Inject
     lateinit var repository: AppRepository
@@ -29,9 +26,12 @@ class OrdersListViewModel(application: Application) : BaseViewModel(application)
         (application as MainApp).appComponent.inject(this)
     }
 
-    fun getOrders() {
+    var liveDataItems = MutableLiveData<List<NotRelevantOrdersPojoItem>>()
+    private val compositeDisposable = CompositeDisposable()
+
+    fun getOrders(id:Int) {
         server?.let {
-            compositeDisposable.add(server.allRelevantOrders()
+            compositeDisposable.add(server.getOldOrdersByWorkerId(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError { t: Throwable -> Log.d("ServerCommunicator", t.message!!) }
@@ -39,7 +39,8 @@ class OrdersListViewModel(application: Application) : BaseViewModel(application)
         }
     }
 
-    fun getAllOrders(): MutableLiveData<List<OrdersPojoItem>> {
+    fun getAllOrders(): MutableLiveData<List<NotRelevantOrdersPojoItem>> {
         return liveDataItems
     }
+
 }

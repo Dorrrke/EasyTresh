@@ -23,8 +23,12 @@ class OrdersInWorkFragment : Fragment(R.layout.fragment_orders_in_work) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this, OrdersInWorkViewModelFactory(activity?.application as MainApp)).get(
-            OrdersInWorkViewModel::class.java)
+        viewModel = ViewModelProvider(
+            this,
+            OrdersInWorkViewModelFactory(activity?.application as MainApp)
+        ).get(
+            OrdersInWorkViewModel::class.java
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

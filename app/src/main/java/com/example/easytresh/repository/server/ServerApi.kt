@@ -57,13 +57,22 @@ interface ServerApi {
     fun deleteOrder(@Body id: Int) : Single<String>
 
     @POST("/updateNOrder")
-    fun updateNOrder(@Body id: Int, state: Boolean): Single<String>
+    fun updateNOrder(@Body id: Int): Single<String>
 
     @POST("/addNotRelevantOrder")
     fun addNOrder(@Body notRelevantOrdersPojoItem: NotRelevantOrdersPojoItem) : Single<String>
 
     @POST("/getOrdersByWorkerId")
     fun getNOrderByWorkerId(@Body id: Int): Single<List<NotRelevantOrdersPojoItem>>
+
+    @POST("/getOldOrdersByWorkerId")
+    fun getOldOrdersByWorkerId(@Body id: Int): Single<List<NotRelevantOrdersPojoItem>>
+
+    @POST("/getNOrdersById")
+    fun getNOrderById(@Body id: Int): Single<NotRelevantOrdersPojoItem>
+
+    @POST("/getNOrdersByUserId")
+    fun getNOrdersByUserId(@Body id: Int): Single<List<NotRelevantOrdersPojoItem>>
 
 
     ////Addresses

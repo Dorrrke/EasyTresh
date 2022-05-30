@@ -27,9 +27,20 @@
     <fragment
         android:id="@+id/orderDetailFragment"
         android:name="com.example.easytresh.presentation.workers_screens.OrderDetailFragment"
-        android:label="OrderDetailFragment" />
+        android:label="OrderDetailFragment"
+        tools:layout="@layout/fragment_order_detail"/>
     <fragment
         android:id="@+id/ordersInWorkFragment"
         android:name="com.example.easytresh.presentation.workers_screens.OrdersInWorkFragment"
-        android:label="OrdersInWorkFragment" />
+        android:label="OrdersInWorkFragment"
+        tools:layout="@layout/fragment_orders_in_work">
+        <action
+            android:id="@+id/action_ordersInWorkFragment_to_inWorkDetailFragment"
+            app:destination="@id/inWorkDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inWorkDetailFragment"
+        android:name="com.example.easytresh.presentation.workers_screens.InWorkDetailFragment"
+        android:label="InWorkDetailFragment"
+        tools:layout="@layout/fragment_in_work_detail"/>
 </navigation>

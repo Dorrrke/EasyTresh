@@ -2,11 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
      android:id="@+id/orderFragment"
-     android:title="Order"/>
+     android:title="Order"
+        android:icon="@drawable/ic_orders"/>
     <item
         android:id="@+id/profileFragment"
-        android:title="Profile"/>
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"/>
     <item
         android:id="@+id/historyFragment"
-        android:title="History"/>
+        android:title="History"
+        android:icon="@drawable/ic_history"/>
 </menu>

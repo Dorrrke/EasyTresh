@@ -47,13 +47,9 @@ class OrderDetailFragment : Fragment(R.layout.fragment_order_detail) {
         viewModel.getOrder().observe(viewLifecycleOwner, Observer { initOrderField(it) })
         viewModel.getAddress().observe(viewLifecycleOwner, Observer { initAddressField(it) })
 
-        var completeBtn = view.findViewById<Button>(R.id.CompliteBnt)
         var catchBtn = view.findViewById<Button>(R.id.chatchOrderBtn)
 
-        completeBtn.visibility = View.INVISIBLE
         catchBtn.setOnClickListener {
-                catchBtn.visibility = View.INVISIBLE
-                completeBtn.visibility = View.VISIBLE
                 viewModel.catchOrder(
                     NotRelevantOrdersPojoItem(
                         order.date,

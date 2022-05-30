@@ -28,4 +28,6 @@ interface AppComponent {
     fun inject (viewModel: OrdersListViewModel)
     fun inject (viewModel: OrderDetailViewModel)
     fun inject(viewModel: OrdersInWorkViewModel)
+    fun inject(viewModel: InWorkDetailViewModel)
+    fun inject(viewModel: WorkHistoryViewModel)
 }

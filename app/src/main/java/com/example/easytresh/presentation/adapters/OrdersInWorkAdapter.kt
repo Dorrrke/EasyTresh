@@ -10,7 +10,9 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.easytresh.MainApp
 import com.example.easytresh.R
+import com.example.easytresh.presentation.workers_screens.InWorkDetailFragment
 import com.example.easytresh.presentation.workers_screens.OrderDetailFragment
+import com.example.easytresh.presentation.workers_screens.OrdersInWorkFragment
 import com.example.easytresh.repository.database.pojo.NotRelevantOrdersPojoItem
 import com.example.easytresh.repository.database.pojo.OrdersPojoItem
 
@@ -51,7 +53,12 @@ class OrdersInWorkAdapter(
         holder.typeText!!.text = orders[position]!!.trashType
         holder.sizeText!!.text = orders[position]!!.size
         holder.relevantText!!.text = orders[position]!!.relevance.toString()
-        holder.layout!!.setOnClickListener {}
+        holder.layout!!.setOnClickListener {
+            navController.navigate(
+                R.id.action_ordersInWorkFragment_to_inWorkDetailFragment,
+                bundleOf(InWorkDetailFragment.orderKey to orders[position].orderId)
+            )
+        }
     }
 
     override fun getItemCount(): Int = orders.size

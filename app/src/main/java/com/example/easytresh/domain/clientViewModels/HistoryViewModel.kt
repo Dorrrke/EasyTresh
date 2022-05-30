@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.easytresh.MainApp
 import com.example.easytresh.domain.BaseViewModel
 import com.example.easytresh.repository.AppRepository
+import com.example.easytresh.repository.database.pojo.NotRelevantOrdersPojoItem
 import com.example.easytresh.repository.database.pojo.OrdersPojoItem
 import com.example.easytresh.repository.server.ServerApi
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -15,7 +16,8 @@ import javax.inject.Inject
 
 class HistoryViewModel(application: Application): BaseViewModel(application) {
 
-    var liveDataItems = MutableLiveData<List<OrdersPojoItem>>()
+    var ordersDataItems = MutableLiveData<List<OrdersPojoItem>>()
+    var completeOrdersDataItems = MutableLiveData<List<NotRelevantOrdersPojoItem>>()
     private val compositeDisposable = CompositeDisposable()
 
     @Inject
@@ -34,11 +36,24 @@ class HistoryViewModel(application: Application): BaseViewModel(application) {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError { t: Throwable -> Log.d("ServerCommunicator", t.message!!) }
-                .subscribe { list -> liveDataItems.value = list})
+                .subscribe { list -> ordersDataItems.value = list})
+        }
+    }
+
+    fun getCompleteOrders(userId: Int){
+        server?.let {
+            compositeDisposable.add(server.getNOrdersByUserId(userId).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnError { t: Throwable -> Log.d("ServerCommunicator", t.message!!) }
+                .subscribe { list -> completeOrdersDataItems.value = list})
         }
     }
 
     fun getAllOrders(): MutableLiveData<List<OrdersPojoItem>> {
-        return liveDataItems
+        return ordersDataItems
+    }
+
+    fun getAllCompleteOrders(): MutableLiveData<List<NotRelevantOrdersPojoItem>> {
+        return completeOrdersDataItems
     }
 }
