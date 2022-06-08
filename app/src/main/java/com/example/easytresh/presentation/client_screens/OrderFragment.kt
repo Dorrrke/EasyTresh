@@ -80,7 +80,7 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
                             address,
                             OrdersPojoItem(
                                 null,
-                                "Domestic",
+                                "Building",
                                 MainFragment.userId,
                                 editSize.text.toString(),
                                 null,
